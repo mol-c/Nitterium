@@ -35,6 +35,8 @@ configure<com.android.build.api.dsl.ApplicationExtension> {
             isMinifyEnabled = true
             // Enables resource shrinking.
             isShrinkResources = true
+// ADD THIS LINE: Tells Gradle to auto-sign the release APK
+            signingConfig = signingConfigs.getByName("debug")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
