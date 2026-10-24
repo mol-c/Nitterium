@@ -12,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.core.content.pm.PackageInfoCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -36,7 +37,10 @@ class MainActivity : ComponentActivity() {
         val packageInfo = packageManager.getPackageInfo(packageName, 0)
         val viewModel: MainViewModel by viewModels {
             viewModelFactory {
-                MainViewModel(app.userPreferencesRepository, packageInfo.longVersionCode)
+                MainViewModel(
+                    app.userPreferencesRepository,
+                    PackageInfoCompat.getLongVersionCode(packageInfo)
+                )
             }
         }
 
