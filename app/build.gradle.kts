@@ -13,7 +13,7 @@ configure<com.android.build.api.dsl.ApplicationExtension> {
 
     defaultConfig {
         applicationId = "com.kaleedtc.nitterium"
-        minSdk = 30
+        minSdk = 27
         targetSdk = 37
         versionCode = 13
         versionName = "2.0.0"
